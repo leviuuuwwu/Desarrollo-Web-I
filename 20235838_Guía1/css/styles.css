@@ -46,7 +46,6 @@ body {
     color: #e74c3c; /* Rojo vibrante para los nombres de los países */
     font-size: 1.8em; /* Tamaño de fuente más grande para los títulos de los países */
     margin-bottom: 5px; /* Espacio inferior para separar del texto */
-    text-align: center;
 }
 
 .country-section p {
@@ -62,7 +61,7 @@ a {
     text-decoration: none;
     font-weight: 700; /* Enlaces más gruesos para mejorar la visibilidad */
 }
-
+    
 a:hover {
     color: #95b5dc; /* Color más claro al pasar el mouse */
     text-decoration: underline; /* Subrayar enlaces al pasar el mouse */
