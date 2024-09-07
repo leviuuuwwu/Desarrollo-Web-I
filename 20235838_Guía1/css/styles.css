@@ -46,6 +46,7 @@ body {
     color: #e74c3c; /* Rojo vibrante para los nombres de los países */
     font-size: 1.8em; /* Tamaño de fuente más grande para los títulos de los países */
     margin-bottom: 5px; /* Espacio inferior para separar del texto */
+    text-align: center;
 }
 
 .country-section p {
