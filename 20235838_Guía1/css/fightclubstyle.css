@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'Fight This';
+    src: url('../assets/fonts/FIGHTT3_.ttf') format('truetype');
+    font-style: normal;
+    
+}
+
+.main-title {
+    font-family: 'Fight This', sans-serif;
+    text-align: center;
+    font-size: 250px;
+    color: #e57ea5;
+    margin-top: -5%;
+    margin-bottom: -2%;
+}
+
+body {
+    background-color: black;
+    font-family: 'Roboto', sans-serif;
+    color: white; 
+    line-height: 1.5;
+    padding: 0;
+    margin-left: 1%;
+    margin-right: 0.5%;
+    }
+
+.datosgenerales {
+    font-size: 1.2em; 
+    color: whitesmoke; 
+}
+
+h2 {
+    font-family: 'Fight This', sans-serif;
+    color: #e57ea5;
+}
+
+.poster {
+    width: 15%; 
+    max-width: 400px; 
+    margin: 10px auto; 
+    display: block; 
+}
+
+.sinopsis {
+    font-size: 1.2em;
+    color: rgb(196, 195, 195);
+}
+
+.p1 {
+    font-size: 1.4em;
+}
+
+.p2 {
+    text-transform: lowercase;
+    font-size: 1.5em;
+}
