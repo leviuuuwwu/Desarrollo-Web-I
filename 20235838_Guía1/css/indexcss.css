@@ -1,3 +1,7 @@
+body {
+    background-color: blueviolet;
+}
+
 h2 {
     background-color: purple;
     color: white;
@@ -9,3 +13,4 @@ h2 {
     color: white;
     font-style: oblique;
 }
+
