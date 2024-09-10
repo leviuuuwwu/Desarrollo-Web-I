@@ -31,6 +31,6 @@ body{
     background-color: white;
 }
 
-.filaPar p:nth-child(even){
+#tablero .filaPar p:nth-child(2n+2){
     background-color: white;
 }
