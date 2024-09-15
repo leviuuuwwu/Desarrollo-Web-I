@@ -1,25 +1,45 @@
 body {
     background-color: blueviolet;
+    font-family: Arial, sans-serif;
 }
 
 h2 {
     background-color: purple;
     color: white;
     font-style: italic;
+    text-align: center;
+    padding: 10px;
 }
 
-.guia1 {
+.caja {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px;
+    text-align: center;
+    width: 300px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.caja img {
+    width: 300px;
+    height: 200px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.caja a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.caja a.guia1, a.guia2, a.guia3 {
     background-color: #000000;
     color: white;
-    font-style: oblique;
-}
-
-.img {
-    height: 200px;
-}
-
-.guia2 {
-    background-color: aquamarine;
-    color: black;
-    font-style: initial;
+    padding: 10px;
+    display: block;
+    margin-top: 10px;
 }

@@ -52,3 +52,16 @@ nav span a {
 nav span a:hover{
     background-color: #b2dfdb;
 }
+
+nav span a[href^="http"] {
+    background-color: #9E9E9E;
+}
+
+section article p:first-letter {
+    color: gold;
+    font-size: 1.5rem;
+}
+
+section article:first-child p:first-line {
+    text-decoration: underline;
+}
