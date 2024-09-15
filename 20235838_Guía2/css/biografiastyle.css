@@ -1,12 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.titulo{
+    text-align: center;
+    font-family: 'Lato';
+    margin-bottom: -10px;
+    margin-top: -10px;
+}
+
 body{
     background-color: black;
     color: white;
     font-size: 18px;
+    font-family: 'Lato';
+    margin-left: 30px;
 }
 
 .yoactual {
     float: left;
-    margin-right: 1rem;
-    width: 150px; /* Adjust the width as needed */
+    margin-right: 35px;
+    width: 250px; 
+    height: 335px;
+}
+
+.demasiadoflow {
+    float: right;
+    margin-left: 35px;
+    width: 250px;
     height: auto;
 }
+
+section h2, h3{
+    font-style: italic;
+}
+
+li {
+    padding: 5px;
+}    
+
+ul li a:hover {
+    color: #4476c2; 
+}
+
+footer {
+    background-color: skyblue;
+    color: white;
+    font-size: 20px;
+    margin-top: 20px;
+    padding: 5px;
+    text-align: center;
+}
+
+footer img{
+    width: 100px;
+    height: auto;
+}
+
+
+
+
+
