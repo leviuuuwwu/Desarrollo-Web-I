@@ -77,3 +77,13 @@ footer img{
     height: 250px;
     margin-left: 500px;
 }
+
+nav span a {
+    background-color: white;
+    border-right: 1px solid;
+    color: black;
+    font-size: 1em;
+    float: left;
+    padding: 10px;
+    text-decoration: none;
+}

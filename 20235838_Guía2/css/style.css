@@ -41,9 +41,9 @@ section article p{
 
 nav span a {
     background-color: white;
-    border-right: 1px solid;
+    border-right: 10px solid;
     color: black;
-    font-size: 0.6rem;
+    font-size: 0.5em;
     float: left;
     padding: 10px;
     text-decoration: none;
