@@ -13,12 +13,17 @@ body{
 header{
     background-color: #16a085;
     height: 130px;
+    overflow: hidden;
 }
 
 footer{
     margin-top: 20px;
     background: #16A085;
     height: 50px;
+}
+
+footer div{
+    padding-top: 1rem;
 }
 
 header div, footer div{
@@ -43,19 +48,36 @@ section{
     display: flex;
     flex-wrap: wrap;
     overflow: hidden;
-    margin: 0.5%;
 }
 
 section article{
     font-size: 0.9rem;
     height: 340px;
-    width: 33.33%;
+    width: 32.33%;
     float: left;
     box-sizing: border-box;
+    margin: 0.5%;
+    border: 2px dashed #16A085;
+    padding: 1%;
+    overflow: hidden;
 }
 
 section article img{
+    display: block;
     height: 180px;
     max-width: 80%;
+    overflow: hidden;
+    margin: 5px auto;
 }
 
+h3{
+    text-align: center;
+}
+
+section article:nth-child(2){
+    background-color: rgba(70, 130, 180, 0.9);
+    position: static;
+    left: 100px;
+    top: 50px;
+    display: none;
+}
