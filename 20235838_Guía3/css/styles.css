@@ -40,4 +40,22 @@ h2{
 section{
     margin: 0 auto;
     width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    margin: 0.5%;
 }
+
+section article{
+    font-size: 0.9rem;
+    height: 340px;
+    width: 33.33%;
+    float: left;
+    box-sizing: border-box;
+}
+
+section article img{
+    height: 180px;
+    max-width: 80%;
+}
+
