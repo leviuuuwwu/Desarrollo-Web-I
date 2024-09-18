@@ -42,5 +42,9 @@ nav>ul>li{
 
 nav>ul>li>ul{
     position: absolute;
+    display: none;
 }
 
+nav>ul>li:hover ul{
+    display: block;
+}
