@@ -1,0 +1,102 @@
+body{
+    background-color: blueviolet;
+    color: aliceblue;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+h1{
+    width: 100%;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+.contenedor1{
+    float: left;
+    width: 47%;
+    padding-left: 3%;
+}
+
+.contenedor2{
+    float: right;
+    width: 47%;
+    padding-left: 3%;
+}
+
+.contenedor1>.diez1 {
+    position: relative;
+    right: 40px;
+    bottom: -30px;
+    left: 410px;
+}
+
+.contenedor1>.jota1 {
+    position: relative;
+    right: 25px; 
+    bottom: 55px;
+    left: 425px; 
+}
+
+.contenedor1>.reina1 {
+    position: relative;
+    right: 10px;
+    bottom: 140px;
+    left: 440px;
+}
+
+.contenedor1>.rey1 {
+    position: relative;
+    right: -5px;
+    bottom: 225px;
+    left: 450px;
+}
+
+.contenedor1>.as1 {
+    position: relative;
+    right: -20px;
+    bottom: 310px;
+    left: 465px;
+}
+
+.contenedor2>.diez2 {
+    position: relative;
+    right: 40px;
+    bottom: -30px;
+    left: 410px;
+    z-index: 5;
+}
+
+.contenedor2>.jota2 {
+    position: relative;
+    right: 25px; 
+    bottom: 55px;
+    left: 425px;
+    z-index: 4; 
+}
+
+.contenedor2>.reina2 {
+    position: relative;
+    right: 10px;
+    bottom: 140px;
+    left: 440px;
+    z-index: 3;
+}
+
+.contenedor2>.rey2 {
+    position: relative;
+    right: -5px;
+    bottom: 225px;
+    left: 450px;
+    z-index: 2;
+}
+
+.contenedor2>.as2 {
+    position: relative;
+    right: -20px;
+    bottom: 310px;
+    left: 465px;
+    z-index: 1;
+}
