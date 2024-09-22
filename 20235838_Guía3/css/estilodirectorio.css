@@ -1,0 +1,25 @@
+body{
+    padding-left: 200px;
+    background-color: green;
+    padding-right: 200px;
+}
+
+h2{
+    color: tomato;
+    letter-spacing: 10px;
+    text-align: center;
+
+}
+
+.dnl{
+    text-align: center;
+    font-family: fantasy;
+}
+
+a{
+    color:aqua
+}
+
+.dnl a:hover{
+    color: aquamarine;
+}
