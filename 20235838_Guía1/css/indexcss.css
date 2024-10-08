@@ -3,12 +3,39 @@ body {
     font-family: Arial, sans-serif;
 }
 
+p {
+    text-align: center;
+    color: white;
+}
+
+h1{
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
 h2 {
     background-color: purple;
     color: white;
     font-style: italic;
     text-align: center;
     padding: 10px;
+}
+
+h3 {
+    text-align: center;
+    color: white;
+}
+
+p>a{
+    color: white;
+    text-decoration: none;
+}
+
+p>a:hover{
+    color: aqua ;
 }
 
 .caja {
@@ -29,6 +56,10 @@ h2 {
     margin-bottom: 10px;
 }
 
+.caja p {
+    color: #000000;
+}
+
 .caja a {
     text-decoration: none;
     font-size: 18px;
@@ -36,10 +67,106 @@ h2 {
     color: #333;
 }
 
-.caja a.guia1, a.guia2, a.guia3 {
+.caja a.guia1, a.guia2, a.guia3, a.guia4 {
     background-color: #000000;
     color: white;
     padding: 10px;
     display: block;
     margin-top: 10px;
+}
+
+.foda {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    padding: 10px;
+}
+
+.cajafoda {
+    width: 45%; 
+    padding: 20px;
+    text-align: center;
+}
+
+.fortalezas {
+    background-color: #6f1fa5; 
+}
+
+.oportunidades {
+    background-color: #3a851d; 
+}
+
+.debilidades {
+    background-color: #db1425; 
+}
+
+.amenazas {
+    background-color: #b9b72d; 
+}
+
+.foda-box p {
+    color: #333;
+}
+
+/* Para pantallas medianas (tablets) */
+@media (max-width: 768px) {
+    .caja {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .foda {
+        flex-direction: column;
+    }
+
+    .cajafoda {
+        width: 100%;
+    }
+
+    h1, h2, h3 {
+        font-size: 1.5em;
+    }
+    
+    p {
+        font-size: 1em;
+    }
+    
+    .caja img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Para pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2em;
+        letter-spacing: 2px;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    .caja {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .foda {
+        flex-direction: column;
+    }
+
+    .cajafoda {
+        width: 100%;
+    }
+
+    .caja img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .caja a {
+        font-size: 16px;
+    }
 }
