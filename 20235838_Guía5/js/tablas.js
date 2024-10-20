@@ -27,4 +27,10 @@ alumnos.forEach(alumno => {
     table += `<td>${alumno.apellido}</td>`;
     table += `<td>${alumno.correo}</td>`;
     table += "</tr>";
-})
+});
+
+table += "</tbody>";
+table += "</table>";
+
+const contenedor = document.querySelector("#idContenedor");
+contenedor.innerHTML = table;
