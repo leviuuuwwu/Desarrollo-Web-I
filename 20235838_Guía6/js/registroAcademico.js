@@ -65,6 +65,25 @@ document.addEventListener("DOMContentLoaded", function () {
             table += "<tbody>";
 
             //Utilizaremos un bucle for para reconocer el arreglo de estudiantes
+            for (let i= 0; i < arrayEstudiantes.length; i++) {
+                //Accediento a las posiciones del arreglo
+                carnet = arrayEstudiantes[i][0];
+                nombres = arrayEstudiantes[i][1];
+                apellidos = arrayEstudiantes[i][2];
+
+                table += `<tr>`;
+                table += `<td scope='row' style='font-weight: bold;'> ${i + 1}</td>`;
+                table += `<td>${carnet}</td>`;
+                table += `<td>${nombres}</td>`;
+                table += `<td>${apellidos}</td>`;
+                table += `</tr>`;
+            }
+
+            table += "</tbody>";
+            table += "</table>";
+            containerEstudiantes.innerHTML = table;
+        } else {
+            alert("No se han registrado estudiantes");
         }
     }
 })
