@@ -47,56 +47,38 @@ Función para agregar un paciente al arreglo arrayPaciente
 validando que todos los campos estén completos
 */
 const addPaciente = function () {
-    let nombre = inputNombre.value;
-    let apellido = inputApellido.value;
-    let fechaNacimiento = inputFechaNacimiento.value;
-    let sexo = "";
-    
-    //Determinando el sexo según el radio seleccionado
-    if (inputRdMasculino.checked) {
-        sexo = "Hombre";
-    } else if (inputRdFemenino.checked) {
-        sexo = "Mujer";
-    }
-    
-    let pais = cmbPais.value;
-    let labelPais = cmbPais.options[cmbPais.selectedIndex].text;
-    let direccion = inputDireccion.value;
+    const editIndex = buttonAgregarPaciente.getAttribute("data-edit-index");
 
-    if (
-        nombre !== "" &&
-        apellido !== "" &&
-        fechaNacimiento !== "" &&
-        sexo !== "" &&
-        pais !== "Seleccione un País:" &&
-        direccion !== ""
-    ) {
-        //Agregando información al arreglo paciente
-        arrayPaciente.push([nombre, apellido, fechaNacimiento, sexo, labelPais, direccion]);
-
-        //Asignando un mensaje a nuestra notificación
-        mensaje.innerHTML = "Se ha registrado un nuevo paciente";
-        // Mostrando el Toast de Bootstrap
-        toast.show();
-
-        //Limpiando formulario
-        limpiarForm();
+    if (editIndex !== null) {
+        actualizarPaciente(parseInt(editIndex));
     } else {
-        //Asignando un mensaje a nuestra notificación
-        mensaje.innerHTML = "Faltan campos por completar";
-        //Mostrando el Toast de Bootstrap
-        toast.show();
+        let nombre = inputNombre.value;
+        let apellido = inputApellido.value;
+        let fechaNacimiento = inputFechaNacimiento.value;
+        let sexo = inputRdMasculino.checked ? "Hombre" : inputRdFemenino.checked ? "Mujer" : "";
+        let pais = cmbPais.value;
+        let labelPais = cmbPais.options[cmbPais.selectedIndex].text;
+        let direccion = inputDireccion.value;
+
+        if (nombre && apellido && fechaNacimiento && sexo && pais !== "Seleccione un País:" && direccion) {
+            arrayPaciente.push([nombre, apellido, fechaNacimiento, sexo, labelPais, direccion]);
+            mensaje.innerHTML = "Se ha registrado un nuevo paciente";
+            toast.show();
+            limpiarForm();
+            imprimirPacientes();
+        } else {
+            mensaje.innerHTML = "Faltan campos por completar";
+            toast.show();
+        }
     }
 };
 
 //Funcion que imprime la ficha de los pacientes registrados
 function imprimirFilas() {
     let filas = "";
-    let contador = 1;
-
-    arrayPaciente.forEach((element) => {
+    arrayPaciente.forEach((element, index) => {
         filas += `<tr>
-            <td scope="row" class="text-center fw-bold">${contador}</td>
+            <td scope="row" class="text-center fw-bold">${index + 1}</td>
             <td>${element[0]}</td>
             <td>${element[1]}</td>
             <td>${element[2]}</td>
@@ -104,15 +86,14 @@ function imprimirFilas() {
             <td>${element[4]}</td>
             <td>${element[5]}</td>
             <td>
-                <button id="btnEditar${contador}" type="button" class="btn btn-primary" alt="Editar">
+                <button onclick="editarPaciente(${index})" type="button" class="btn btn-primary" alt="Editar">
                     <i class="bi bi-pencil-square"></i>
                 </button>
-                <button id="btnEliminar${contador}" type="button" class="btn btn-danger" alt="Eliminar">
+                <button onclick="eliminarPaciente(${index})" type="button" class="btn btn-danger" alt="Eliminar">
                     <i class="bi bi-trash3-fill"></i>
                 </button>
             </td>
         </tr>`;
-        contador++;
     });
     return filas;
 }
@@ -168,11 +149,52 @@ const addPais = () => {
     }
 };
 
+const editarPaciente = (index) => {
+    const paciente = arrayPaciente[index];
+    inputNombre.value = paciente[0];
+    inputApellido.value = paciente[1];
+    inputFechaNacimiento.value = paciente[2];
+    if (paciente[3] === "Hombre") {
+        inputRdMasculino.checked = true;
+    } else if (paciente[3] === "Mujer") {
+        inputRdFemenino.checked = true;
+    }
+    cmbPais.value = Array.from(cmbPais.options).find(opt => opt.text === paciente[4]).value;
+    inputDireccion.value = paciente[5];
+};
+
+const actualizarPaciente = (index) => {
+    arrayPaciente[index] = [
+        inputNombre.value,
+        inputApellido.value,
+        inputFechaNacimiento.value,
+        inputRdMasculino.checked ? "Hombre" : "Mujer",
+        cmbPais.options[cmbPais.selectedIndex].text,
+        inputDireccion.value,
+];
+
+    mensaje.innerHTML = "Paciente actualizado correctamente";
+    toast.show();
+    limpiarForm();
+    imprimirPacientes();
+    buttonAgregarPaciente.removeAttribute("data-edit-index");
+};
+
+const eliminarPaciente = (index) => {
+    arrayPaciente.splice(index, 1);
+
+    // Mostrar mensaje de eliminación
+    mensaje.innerHTML = "Paciente eliminado correctamente";
+    toast.show();
+    imprimirPacientes();
+};
+
 //Asignando eventos a los botones usando funciones de tipo flecha
 buttonLimpiarPaciente.onclick = limpiarForm;
 buttonAgregarPaciente.onclick = addPaciente;
 buttonMostrarPaciente.onclick = imprimirPacientes;
 buttonAgregarPais.onclick = addPais;
+buttonAgregarPaciente.setAttribute("data-edit-index", index);
 
 //Configurando el modal para que el campo de nombre del país reciba el foco al abrirse
 idModal.addEventListener("shown.bs.modal", () => {

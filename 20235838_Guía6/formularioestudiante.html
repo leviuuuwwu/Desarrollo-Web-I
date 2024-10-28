@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Ficha de Estudiante</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Ficha de Estudiante</h2>
+        <form id="formEstudiante">
+            <div class="mb-3">
+                <label for="carnet" class="form-label">Carnet (Formato: AB001)</label>
+                <input type="text" class="form-control" id="carnet">
+                <div class="form-text text-danger" id="errorCarnet"></div>
+            </div>
+
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre Completo</label>
+                <input type="text" class="form-control" id="nombre">
+                <div class="form-text text-danger" id="errorNombre"></div>
+            </div>
+
+            <div class="mb-3">
+                <label for="dui" class="form-label">DUI (Formato: ########-#)</label>
+                <input type="text" class="form-control" id="dui">
+                <div class="form-text text-danger" id="errorDui"></div>
+            </div>
+
+            <div class="mb-3">
+                <label for="nit" class="form-label">NIT (Formato: ####-######-###-#)</label>
+                <input type="text" class="form-control" id="nit">
+                <div class="form-text text-danger" id="errorNit"></div>
+            </div>
+
+            <div class="mb-3">
+                <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+                <input type="date" class="form-control" id="fechaNacimiento">
+                <div class="form-text text-danger" id="errorFechaNacimiento"></div>
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Correo Electrónico</label>
+                <input type="email" class="form-control" id="email">
+                <div class="form-text text-danger" id="errorEmail"></div>
+            </div>
+
+            <div class="mb-3">
+                <label for="edad" class="form-label">Edad</label>
+                <input type="number" class="form-control" id="edad">
+                <div class="form-text text-danger" id="errorEdad"></div>
+            </div>
+
+            <button type="button" class="btn btn-primary" onclick="validarFormulario()">Enviar</button>
+        </form>
+    </div>
+    <script src="js/jsformularioestudiante.js"></script>
+</body>
+</html>
