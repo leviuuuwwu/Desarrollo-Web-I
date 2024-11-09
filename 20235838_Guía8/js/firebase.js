@@ -15,11 +15,19 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db=getFirestore(app);
 
 // Function to register users
-export async function registerUser(email, password) {
+export async function registerUser(email, password, firstName, lastName) {
     try {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const user= userCredential.user;
+        await setDoc(Doc(db, "users", user.uid),{
+            firstName,
+            lastName,
+            role: "user",
+        })
+
         console.log('Usuario registrado exitosamente: ', userCredential.user);
     } catch (error) {
         console.log('Error:', error.message);
