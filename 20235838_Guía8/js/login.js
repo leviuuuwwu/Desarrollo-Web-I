@@ -11,4 +11,12 @@ document.getElementById("registerForm").addEventListener("submit", async(e)=>{
     let firstName= document.getElementById("firstName").value;
     let lastName= document.getElementById("lastName").value;
     alert(firstName+" "+lastName);
-})
+
+    const status = await registerUser(correo, password, firstName, lastName);
+    if(status){
+        alert("Usuario creado exitosamente");
+    }
+    else {
+        alert("Ya existe un usuario asociado a este correo");
+    }
+});
